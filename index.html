@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+
+    <header>
+        <title class="title">運試し晩御飯</title>
+</head>
+
+
+<header>
+
+    <h1>今日の晩御飯は何にしよう？</h1>
+    <p class="top_img"><img src="img/thinkwomen.jpg" alt="悩む女性"></p>
+</header>
+
+<main>
+
+    <title>ルーレット</title>
+    <div class="rice">
+        <link rel="preload" href="img/rice.JPG" as="image" type="image/png">
+    </div>
+    <div class="maccas">
+        <link rel="preload" href="img/maccas.JPG" as="image" type="image/png">
+    </div>
+    <div class="mozuku">
+        <link rel="preload" href="img/mozuku.JPG" as="image" type="image/png">
+    </div>
+    <div class="pizza">
+        <link rel="preload" href="img/pizza.JPG" as="image" type="image/png">
+    </div>
+    <div class="salada">
+        <link rel="preload" href="img/salada.JPG" as="image" type="image/png">
+    </div>
+    <div class="steak">
+        <link rel="preload" href="img/steak.JPG" as="image" type="image/png">
+    </div>
+    <div class="sushi">
+        <link rel="preload" href="img/sushi.JPG" as="image" type="image/png">
+    </div>
+    <div class="tomuyamukun">
+        <link rel="preload" href="img/tomuyamukun.JPG" as="image" type="image/png">
+    </div>
+    <div class="ramen">
+        <link rel="preload" href="img/ramen.JPG" as="image" type="image/png">
+    </div>
+    <div class="kellog">
+        <link rel="preload" href="img/kellog.JPG" as="image" type="image/png">
+    </div>
+
+    <!-- 音声ファイルの読み込み -->
+    <audio id="tts">
+        <source src="audio/決定ボタンを押す3.mp3" type="audio/mp3">
+    </audio>
+
+
+    <script type="text/javascript">
+        spd = 100;
+        tID = 0;
+        i = 0;
+        j = 0;
+        k = 0;
+        m = 0;
+
+        function start_slot() {
+            if (i > 9) {
+                i = 0;
+            }
+            if (j > 9) {
+                j = 0;
+            }
+            if (k > 9) {
+                k = 0;
+            }
+            document.f.x.value = i;
+            document.f.x.className = "image-" + i;
+            document.f.y.value = j;
+            document.f.y.className = "image-" + j;
+            document.f.z.value = k;
+            document.f.z.className = "image-" + k;
+            if (m < 1) {
+                i++;
+            }
+            if (m < 2) {
+                j++;
+            }
+            if (m < 3) {
+                k++;
+            }
+            tID = setTimeout("start_slot()", spd);
+        }
+
+        function stop_slot() {
+
+            if (m < 3) {
+                m++;
+                start_slot();
+            }
+
+            if (m > 2 && (i == j && j == k)) {
+                alert("大当たり！やったね。");
+            }
+
+            clearTimeout(tID);
+        }
+
+        function ring() {
+            document.getElementById("tts").load();
+            document.getElementById("tts").play();
+        }
+
+    </script>
+
+    </head>
+
+    <body bgcolor="#ffffff" text="#ffffff">
+        <center>
+            <table border="3" bgcolor="#ff9966">
+                <tr>
+                    <td>
+                        <center>
+                            <br>
+                            <p class="title">運試し★晩御飯ルーレット</p>
+                            <br><br>
+                            <form name="f">
+                                <input name="x" size=1>
+                                <div class="image-frame"></div>
+                                <input name="y" size=1>
+                                <div class="image-frame"></div>
+
+                                <input name="z" size=1>
+                                <div class="image-frame"></div>
+                                <p>&emsp;【メイン】&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;【主食】&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;【おかず】
+                                </p>
+                                <br><br>
+                                <input type="button" value="START"
+                                    onClick="clearTimeout(tID); m=0; start_slot(); ring()">
+                                <input type="button" value="STOP" onClick="stop_slot();ring()">
+                                <br>
+
+                                <h2>今日の献立は...</h2>
+                                <div class="box">
+                                    <div class="box__inner">
+
+
+                                        <p>
+                                            <script type="text/javascript">
+                                                var msg = new Array();
+                                                msg[0] = "献立が思いつかなかったらマックへGO";
+                                                msg[1] = "手抜きも大事だよね〜"
+                                                msg[2] = "とにかく野菜を摂取！";
+                                                msg[3] = "たまには自炊した方が良さそう・・・"
+
+                                                var no = Math.floor(Math.random() * msg.length);
+
+                                                document.write(msg[no]);
+
+                                            </script>
+
+
+
+
+                                    </div>
+                                </div>
+                                </div>
+                                </div>
+
+                                <br><br>
+                            </form>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </center>
+
+</main>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+.top_img {
+    text-align: center;
+
+}
+
+h1 {
+    position: relative;
+    margin-bottom: 60px 0 0;
+    padding: 20px;
+    border-radius: 10px;
+    background: #ff9966;
+    text-align: center;
+}
+
+.title {
+    margin: 0%;
+    font-size: 40px;
+    font-style: bold;
+    color: yellow;
+}
+
+h1:before,
+h1:after {
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    background: #ff9966;
+}
+
+h1:before {
+    bottom: -15px;
+    left: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+h1:after {
+    bottom: -30px;
+    left: 50px;
+    width: 15px;
+    height: 15px;
+}
+
+input[name=x],
+input[name=y],
+input[name=z] {
+    display: none;
+}
+
+.image-frame {
+    display: inline-block;
+    background-color: white;
+    background-image: url(img/pizza.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+input+.image-frame {
+    width: 300px;
+    height: 200px;
+}
+
+input.image-0+.image-frame {
+    background-image: url(img/rice.JPG);
+}
+
+input.image-1+.image-frame {
+    background-image: url(img/maccas.JPG);
+}
+
+input.image-2+.image-frame {
+    background-image: url(img/mozuku.JPG);
+}
+
+input.image-3+.image-frame {
+    background-image: url(img/pizza.JPG);
+}
+
+input.image-4+.image-frame {
+    background-image: url(img/salada.JPG);
+}
+
+input.image-5+.image-frame {
+    background-image: url(img/steak.JPG);
+}
+
+input.image-6+.image-frame {
+    background-image: url(img/sushi.JPG);
+}
+
+input.image-7+.image-frame {
+    background-image: url(img/tomuyamukun.JPG);
+}
+
+input.image-8+.image-frame {
+    background-image: url(img/ramen.JPG);
+}
+
+input.image-9+.image-frame {
+    background-image: url(img/kellog.JPG);
+}
+
+.box {
+    background: linear-gradient(-45deg, #fba853, #7ec72e);
+    padding: 0.9rem 0.9rem;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+.box__inner {
+    background: #FFF;
+    padding: 1rem;
+    border-radius: 1px;
+}
+
+.box__inner p {
+    line-height: 1rem;
+    color: black;
+}
