@@ -2,7 +2,7 @@
 
 ## DEMO
 
-  - デプロイしている場合はURLを記入（任意）
+  - https://kochan0802.github.io/janken_1/
 
 ## 紹介と使い方
 
